@@ -1,16 +1,69 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Cubical Shelf</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .cube {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      transform-style: preserve-3d;
+      transform: rotateX(-30deg) rotateY(-30deg);
+      animation: rotate 10s infinite linear;
+    }
+
+    .face {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-color: #fff;
+      border: 1px solid #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .face::before, .face::after, .face > div {
+      content: '';
+      height: 1px;
+      background-color: black;
+    }
+
+    .front { transform: translateZ(100px); }
+    .back { transform: rotateY(180deg) translateZ(100px); }
+    .left { transform: rotateY(-90deg) translateZ(100px); }
+    .right { transform: rotateY(90deg) translateZ(100px); }
+    .top { transform: rotateX(90deg) translateZ(100px); }
+    .bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+    @keyframes rotate {
+      0% { transform: rotateX(-30deg) rotateY(-30deg); }
+      100% { transform: rotateX(-30deg) rotateY(330deg); }
+    }
+  </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
-
-</body>
-
-</html>
+  <div class="cube">
+    <div class="face front">
+      <div></div><div></div><div></div>
+    </div>
+    <div class="face back">
+      <div></div><div></div><div></div>
+    </div>
+    <div class="face left">
+      <div></div><div></div><div></div>
+    </div>
+    <div class="face right">
+      <div></div><div></div><div
