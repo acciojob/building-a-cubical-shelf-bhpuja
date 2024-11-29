@@ -4,47 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cubical Shelf</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f0f0f0;
-    }
-
-    .cube {
-      position: relative;
-      width: 200px;
-      height: 200px;
-      transform-style: preserve-3d;
-      transform: rotateX(-30deg) rotateY(-30deg);
-    }
-
-    .face {
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      background-color: #fff;
-      border: 1px solid #000;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .face::before, .face::after, .face > div {
-      content: '';
-      height: 1px;
-      background-color: black;
-    }
-
-    .front { transform: translateZ(100px); }
-    .back { transform: rotateY(180deg) translateZ(100px); }
-    .left { transform: rotateY(-90deg) translateZ(100px); }
-    .right { transform: rotateY(90deg) translateZ(100px); }
-    .top { transform: rotateX(90deg) translateZ(100px); }
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="cube">
+    <div class="face front"><div></div><div></div><div></div></div>
+    <div class="face back"><div></div><div></div><div></div></div>
+    <div class="face left"><div></div><div></div><div></div></div>
+    <div class="face right"><div></div><div></div><div></div></div>
+    <div class="face top"><div></div><div></div><div></div></div>
+    <div class="face bottom"><div></div><div></div><div></div></div>
+  </div>
 </body>
 </html>
-
-
